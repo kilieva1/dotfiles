@@ -94,6 +94,7 @@ source $ZSH/oh-my-zsh.sh
 
 EDITOR='vim'
 KEYTIMEOUT=1
+PLAYER='spot'
 
 ### ALIASES
 
@@ -165,3 +166,5 @@ autoload -U compinit && compinit
 . /opt/asdf-vm/asdf.sh
 
 fastfetch
+
+setopt no_hist_verify # prevents substitution confirmation
