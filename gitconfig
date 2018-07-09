@@ -14,7 +14,9 @@
   mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
   count-lines = "! git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"added lines: %s, removed lines: %s, total lines: %s\\n\", add, subs, loc }' #"
 [github]
-  user = shane4ster
+  user = chipwolf
+[gpg]
+  program = gpg
 [commit]
   gpgsign = true
 [filter "lfs"]
