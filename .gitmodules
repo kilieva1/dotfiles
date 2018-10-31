@@ -135,3 +135,6 @@
 [submodule "vim/pack/plugins/start/vim-yaml-folds"]
 	path = vim/pack/plugins/start/vim-yaml-folds
 	url = https://github.com/pedrohdz/vim-yaml-folds.git
+[submodule "vim/pack/plugins/start/nerdtree-git-plugin"]
+	path = vim/pack/plugins/start/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
