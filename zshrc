@@ -94,7 +94,6 @@ source $ZSH/oh-my-zsh.sh
 
 EDITOR='vim'
 KEYTIMEOUT=1
-PLAYER='spot'
 
 ### ALIASES
 
@@ -102,11 +101,6 @@ alias tmux='tmux -2'
 alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'  # This loads nvm
 alias kc='nocorrect kubectl'
 alias l='exa -abglm --color-scale --git --color=automatic'
-
-alias sleepoff='sudo pmset -b sleep 0; sudo pmset -b disablesleep 1'
-alias sleepon='sudo pmset -b sleep 5; sudo pmset -b disablesleep 0'
-
-alias note="bash $HOME/.etc/scripts/notes.sh"
 
 ### FUNCTIONS
 
@@ -121,15 +115,6 @@ TRAPUSR1() {
 }
 
 fpath=(/usr/local/share/zsh-completions $fpath)
-
-kubectl () {
-    if [[ -z $KUBECTL_COMPLETE ]]
-    then
-        source <($commands[kubectl] completion zsh)
-        KUBECTL_COMPLETE=1 
-    fi
-    $commands[kubectl] $*
-}
 
 zmodload zsh/complist
 
