@@ -6,6 +6,8 @@ export ZSH_CUSTOM=$HOME/.zsh/custom
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="bullet-train"
 zstyle ':omz:alpha:lib:git' async-prompt no
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=15
 
 # Bullettrain config
 BULLETTRAIN_CONTEXT_FG="white"
@@ -35,7 +37,8 @@ BULLETTRAIN_PROMPT_ORDER=(
 export SHOW_AWS_PROMPT=false
 
 # Apply Bullettrain patch
-zshwd="$(pwd)" cd ~/.etc/zsh/bullet-train.zsh && git apply ~/.etc/bullet-train.patch > /dev/null 2>&1; cd "$zshwd"
+patch --forward --input ~/.etc/bullet-train.patch --directory ~/.etc/zsh/bullet-train.zsh --reject-file /tmp/deleteme.rej > /dev/null 2>&1
+rm -f /tmp/deleteme.rej
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -70,6 +73,7 @@ plugins=(
     fasd
     kubectl
     zsh-completions
+    kubectl
 )
 
 #ZSH_TMUX_AUTOSTART=${ZSH_TMUX_AUTOSTART:=true}
@@ -135,7 +139,7 @@ bindkey "\e\e[C" forward-word # alt + ->
 
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-. $HOME/.zsh/scripts/exercism_completion.zsh
+source <(helm completion zsh | sed -E 's/\["(.+)"\]/\[\1\]/g')
 
 export NVM_DIR="$HOME/.nvm"
 
@@ -162,4 +166,16 @@ autoload -U compinit && compinit
 
 fastfetch
 
+alias note='bash ~/.etc/scripts/notes.sh'
+
 setopt no_hist_verify # prevents substitution confirmation
+
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
+
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'.
+
+eval "$(rbenv init -)"
