@@ -47,7 +47,7 @@ HYPHEN_INSENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -243,11 +243,6 @@ autoload -U compinit && compinit
 
 fastfetch
 
-
 setopt no_hist_verify # prevents substitution confirmation
 
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'.
-
-autoload -U compinit && compinit
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
