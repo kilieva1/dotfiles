@@ -6,3 +6,4 @@ export WLR_DRM_NO_MODIFIERS=1
 if [ -f "$HOME/.profile" ]; then
     source "$HOME/.profile"
 fi
+
