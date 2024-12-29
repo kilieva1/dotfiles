@@ -34,10 +34,6 @@
   tool = vimdiff
 [pull]
   rebase = true
-[includeIf "gitdir:~/repo/github.com/ovotech/"]
-  path = ~/.gitconfig.work
-[includeIf "gitdir:~/repo/github.com/kaluza-platform/"]
-  path = ~/.gitconfig.work
 [include]
   path = ~/.gitconfig.overrides
 [init]

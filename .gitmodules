@@ -129,9 +129,6 @@
 [submodule "vim/pack/plugins/start/vim-go"]
 	path = vim/pack/plugins/start/vim-go
 	url = https://github.com/fatih/vim-go.git
-[submodule "tmux.plugins/nord-tmux"]
-	path = tmux.plugins/nord-tmux
-	url = https://github.com/arcticicestudio/nord-tmux.git
 [submodule "vim/pack/plugins/start/vim-yaml-folds"]
 	path = vim/pack/plugins/start/vim-yaml-folds
 	url = https://github.com/pedrohdz/vim-yaml-folds.git
