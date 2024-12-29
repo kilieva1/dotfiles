@@ -286,5 +286,7 @@ set -g status-interval 5
 
 set -g @resurrect-strategy-vim 'session'
 
+set -g default-shell /usr/bin/zsh
+
 run-shell ~/.tmux.plugins/tmux-resurrect/resurrect.tmux
 run-shell ~/.tmux.plugins/vim-tmux-navigator/vim-tmux-navigator.tmux

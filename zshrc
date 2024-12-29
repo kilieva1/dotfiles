@@ -71,10 +71,10 @@ plugins=(
     exa
     fasd
     kubectl
+    mise
     zsh-completions
     kubectl
     fasd
-    fzf
     zsh-completions
     pyenv
 )
@@ -238,10 +238,6 @@ for file in $POSTFILES; do
 done
 
 autoload -U compinit && compinit
-
-. /opt/asdf-vm/asdf.sh
-
-fastfetch
 
 setopt no_hist_verify # prevents substitution confirmation
 
