@@ -23,7 +23,7 @@ if ! command -v brew 2>&1 >/dev/null; then
 fi
 
 # FIXME: substitute casks on linux
-# FIXME: decide what mise is responsible for (currently dupes neovim)
+# TODO: attribute packages, ie. ruby-build deps  
 brew bundle --no-lock --file=/dev/stdin <<EOF
 cask "alfred"
 cask "bartender"
@@ -32,12 +32,17 @@ cask "iterm2"
 cask "font-fira-code-nerd-font"
 cask "xscreensaver"
 brew "antidote"
+brew "autoconf"
 brew "bat"
 brew "eza"
 brew "fzf"
 brew "git"
+brew "gmp"
+brew "libyaml"
 brew "mise"
 brew "neovim"
+brew "openssl@3"
+brew "readline"
 brew "thefuck"
 brew "tmux"
 brew "zsh"
@@ -46,6 +51,11 @@ EOF
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
+
+mise trust
+mise install
+
+nvim --headless "+Lazy! sync" +qa
 {{ end -}}
 
 {{- if .codespaces }}
