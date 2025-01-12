@@ -1,2 +1,4 @@
 [tools]
-"aqua:neovim/neovim" = "latest"
+go = "latest"
+node = "latest"
+ruby = "latest"
