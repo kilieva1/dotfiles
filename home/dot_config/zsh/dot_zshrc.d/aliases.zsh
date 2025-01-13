@@ -23,6 +23,10 @@ alias grh='git reset --hard'
 
 alias note='bash ~/.etc/scripts/notes.sh'
 alias tmux='tmux -2'
+
+alias v='nvim'
+alias vc='nvim .'
+alias vi='nvim'
 alias vim='nvim'
 
 if (( $+commands[bat] )); then
