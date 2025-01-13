@@ -21,6 +21,21 @@ COMPLETION_WAITING_DOTS="true"
 export PATH="${PATH}:${HOME}/.scripts:${HOME}/.krew/bin"
 export GPG_TTY=$(tty)
 
+export HOMEBREW_NO_ENV_HINTS=true
+
+# Disables the sending of telemetry by golang tools.
+# https://github.com/golang/go/discussions/58409
+export GOTELEMETRY=off
+
+# Prevent Homebrew from collecting analytics.
+export HOMEBREW_NO_ANALYTICS=1
+
+# Forbid redirects from secure HTTPS to insecure HTTP.
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+
+# Require all casks to have a checksum
+export HOMEBREW_CASK_OPTS="--require-sha"
+
 # Ensure path arrays do not contain duplicates.
 typeset -gU path fpath
 
