@@ -8,8 +8,9 @@ fpath=($ZFUNCDIR $fpath)
 autoload -Uz $ZFUNCDIR/*(.:t)
 
 # Set any zstyles you might use for configuration.
-zstyle ':bracketed-paste-magic' active-widgets '.self-*'.
 zstyle ':antidote:bundle' use-friendly-names 'yes'
+zstyle ':completion:*:commands' rehash yes
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'.
 
 # Source and load Antidote
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
