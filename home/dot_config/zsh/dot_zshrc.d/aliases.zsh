@@ -21,13 +21,14 @@ alias grir='git rebase -i --root'
 alias gr='git reset'
 alias grh='git reset --hard'
 
-alias note='bash ~/.etc/scripts/notes.sh'
 alias tmux='tmux -2'
 
 alias v='nvim'
 alias vc='nvim .'
 alias vi='nvim'
 alias vim='nvim'
+
+alias cm='chezmoi'
 
 if (( $+commands[bat] )); then
   alias cat=bat
