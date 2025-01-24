@@ -29,31 +29,12 @@ fi
 # FIXME: substitute casks on linux
 # TODO: attribute packages, ie. ruby-build deps  
 brew bundle --no-lock --file=/dev/stdin <<EOF
-cask "1password" # cp
-cask "1password-cli"
-cask "alfred"
-cask "amethyst" # tiling wm
-cask "element" # matrix chat
-cask "font-fira-code-nerd-font"
-cask "gather"
-cask "google-drive"
-cask "gpg-suite"
-cask "jordanbaird-ice" # menu bar
-cask "iterm2"
-cask "lm-studio"
-cask "lulu" # firewall
-cask "notion"
-cask "macwhisper"
-cask "obsidian"
-cask "xscreensaver"
-cask "yubico-authenticator"
-cask "zoom"
-cask "zulip"
 brew "age-plugin-yubikey"
 brew "antidote"
 brew "asitop" # apple silicon
 brew "autoconf"
-brew "bat"
+brew "bat" # better cat
+brew "colordiff"
 brew "eza"
 brew "fzf"
 brew "git"
@@ -63,20 +44,45 @@ brew "libyaml"
 brew "mas"
 brew "mise"
 brew "neovim"
-brew "openssl@3"
+brew "openssh"
+brew "openssl@3" # FIXME: does not appear in bundle
 brew "pinentry-mac"
 brew "rage"
-brew "readline"
-brew "rg"
+brew "readline" # FIXME: does not appear in bundle
+brew "ripgrep"
+brew "sevenzip"
 brew "thefuck"
 brew "tmux"
-brew "ykman"
-brew "yubikey-personalization"
 brew "wget"
+brew "ykman"
+brew "ykpers"
 brew "zsh"
+cask "1password" # work
+cask "1password-cli" # work
+cask "alfred"
+cask "amethyst" # tiling wm
+cask "element" # matrix chat
+cask "font-fira-code-nerd-font"
+cask "gather"
+cask "google-drive"
+cask "gpg-suite"
+cask "iterm2"
+cask "jordanbaird-ice" # menu bar
+cask "lm-studio"
+cask "lookaway" # screen breaks
+cask "lulu" # firewall
+cask "macwhisper"
+cask "notion" # work
+cask "obsidian"
+cask "wakatime"
+cask "xscreensaver"
+cask "yubico-authenticator"
+cask "zoom"
+cask "zulip"
 mas "1Password for Safari", id: 1569813296
 mas "Fantastical", id: 975937182
 mas "monday.com", id: 1298450641
+tap "homebrew/bundle"
 EOF
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
