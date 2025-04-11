@@ -28,7 +28,7 @@ fi
 
 # FIXME: substitute casks on linux
 # TODO: attribute packages, ie. ruby-build deps  
-brew bundle --no-lock --file=/dev/stdin <<EOF
+brew bundle --file=/dev/stdin <<EOF
 brew "antidote"
 brew "bat" # better cat
 brew "eza" # better ls
@@ -48,7 +48,6 @@ cask "iterm2" # better terminal
 cask "jordanbaird-ice" # menu bar
 cask "notion"
 mas "Fantastical", id: 975937182
-tap "homebrew/bundle"
 EOF
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
