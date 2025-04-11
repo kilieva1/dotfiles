@@ -29,60 +29,25 @@ fi
 # FIXME: substitute casks on linux
 # TODO: attribute packages, ie. ruby-build deps  
 brew bundle --no-lock --file=/dev/stdin <<EOF
-brew "age-plugin-yubikey"
 brew "antidote"
-brew "asitop" # apple silicon
-brew "autoconf"
 brew "bat" # better cat
-brew "colordiff"
-brew "eza"
-brew "fzf"
+brew "eza" # better ls
+brew "fzf" # fuzzy finder
 brew "git"
-brew "gmp"
-brew "gnupg"
-brew "libyaml"
-brew "mas"
-brew "mise"
-brew "neovim"
-brew "openssh"
-brew "openssl@3" # FIXME: does not appear in bundle
-brew "pinentry-mac"
-brew "rage"
-brew "readline" # FIXME: does not appear in bundle
-brew "ripgrep"
+brew "mas" # mac app store
+brew "mise" # mise-en-place
 brew "sevenzip"
 brew "thefuck"
 brew "tmux"
-brew "wakatime-cli"
 brew "wget"
-brew "ykman"
-brew "ykpers"
 brew "zsh"
-cask "1password" # work
-cask "1password-cli" # work
-cask "alfred"
+cask "alfred" # better spotlight
 cask "amethyst" # tiling wm
-cask "element" # matrix chat
 cask "font-fira-code-nerd-font"
-cask "gather"
-cask "google-drive"
-cask "gpg-suite"
-cask "iterm2"
+cask "iterm2" # better terminal
 cask "jordanbaird-ice" # menu bar
-cask "lm-studio"
-cask "lookaway" # screen breaks
-cask "lulu" # firewall
-cask "macwhisper"
-cask "notion" # work
-cask "obsidian"
-cask "wakatime"
-cask "xscreensaver"
-cask "yubico-authenticator"
-cask "zoom"
-cask "zulip"
-mas "1Password for Safari", id: 1569813296
+cask "notion"
 mas "Fantastical", id: 975937182
-mas "monday.com", id: 1298450641
 tap "homebrew/bundle"
 EOF
 
@@ -100,8 +65,8 @@ fi
 
 {{- if .codespaces }}
 cat <<EOF > "$HOME/.gitconfig.overrides"
-[user]
-	name = Chip Wolf ‮
+[commit]
+  gpgsign = true
 [gpg]
 	program = /.codespaces/bin/gh-gpgsign
 EOF
